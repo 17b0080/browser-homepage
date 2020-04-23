@@ -11,6 +11,8 @@ exports.onCreateWebpackConfig = ({ actions },{ cssLoaderOptions = {}, postCssPlu
   actions.setWebpackConfig({
     plugins: [new StylelintPlugin({
       fix: true,
+      lintDirtyModulesOnly: true,
+      context: "./src",
       files: `**/*.css`
     })]
   })
